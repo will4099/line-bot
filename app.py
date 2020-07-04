@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, request, abort
 
 from linebot import (
@@ -8,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
+    MessageEvent, TextMessage, TextSendMessage, StickerSendMessage
 )
 
 app = Flask(__name__)
@@ -44,6 +43,11 @@ def handle_message(event):
         r = 'Hello'
     if '愛' in msg:
         r = '啾啾啾啾啾'
+    if '帥' in msg:
+        sticker_message = StickerSendMessage(
+    package_id='23',
+    sticker_id='2'
+)
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
