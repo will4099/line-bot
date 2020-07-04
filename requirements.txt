@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 line-bot-sdk
 gunicorn
+=======
+line-bot-sdk
+gunicorn
+>>>>>>> ca9c51d658879fa3e0a3947f3e07db091ae57136
 flask
