@@ -45,8 +45,8 @@ def handle_message(event):
         r = '啾啾啾啾啾'
     if '帥' in msg:
         sticker_message = StickerSendMessage(
-    package_id='23',
-    sticker_id='2'
+        package_id='23',
+        sticker_id='2'
 )
     line_bot_api.reply_message(
         event.reply_token,
