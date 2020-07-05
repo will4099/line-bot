@@ -48,12 +48,12 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             sticker_message)
-    if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
+    elif '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
         r = '嗨'  
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=r))
-    if '啾'or '愛' in msg:
+    elif '啾'or '愛' in msg:
         r = '啾啾啾啾啾'
         r1 = '最愛小Q了'
     line_bot_api.reply_message(
