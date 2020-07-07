@@ -60,7 +60,6 @@ def handle_message(event):
             event.reply_token,
             r and s)
 
-
     if msg == '啾' or '啾啾' or '啾啾啾' :
         r = '啾啾啾啾啾'
         s = StickerSendMessage(
