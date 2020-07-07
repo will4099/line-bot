@@ -38,26 +38,61 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+    r = '黎黎不懂'
     if '帥' in msg :
-        sticker_message = StickerSendMessage(
+        s = StickerSendMessage(
             package_id='1',
             sticker_id='5'
         )
 
         line_bot_api.reply_message(
         event.reply_token,
-        sticker_message)
-    else if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
-        r = '嗨'  
-    else if '啾' in msg:
-        r = '啾啾啾啾啾'
-    else if '愛' in msg:
-        r = '最愛小Q了'
-    else:
-        r = '黎黎不懂'
-    line_bot_api.reply_message(
+        s)
+
+    if '啾啾啾啾' in msg:
+        r = '帥大真的好愛小Q喔'
+        s = StickerSendMessage(
+            package_id='11538',
+            sticker_id='51626495'
+        )
+
+        line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r))
+        r and s)
+
+    if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
+        s = StickerSendMessage(
+            package_id='11537',
+            sticker_id='52002738'
+        )
+
+        line_bot_api.reply_message(
+        event.reply_token,
+        s)
+
+    if msg == '啾' or '啾啾' or '啾啾啾' :
+        r = '啾啾啾啾啾'
+        s = StickerSendMessage(
+            package_id='11537',
+            sticker_id='52002737'
+        )
+        line_bot_api.reply_message(
+        event.reply_token,
+        r and s)
+
+    if '愛' in msg:
+        r = '最愛小Q了'
+        s = StickerSendMessage(
+            package_id='11538',
+            sticker_id='51626502'
+        )
+        line_bot_api.reply_message(
+        event.reply_token,
+        r and s)
+
+    line_bot_api.reply_message(
+    event.reply_token,
+    TextSendMessage(text=r))
     
 
 if __name__ == "__main__":
