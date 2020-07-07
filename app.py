@@ -51,7 +51,7 @@ def handle_message(event):
 
     if '啾啾啾啾' in msg:
         r = '帥大真的好愛小Q喔'
-        
+
     if msg == '啾' or '啾啾' or '啾啾啾' :
         r = '啾啾啾啾啾'
                
