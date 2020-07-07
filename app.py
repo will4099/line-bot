@@ -49,16 +49,16 @@ def handle_message(event):
             event.reply_token,
             s)
 
-    if '啾啾啾啾' in msg:
+    elif '啾啾啾啾' in msg:
         r = '帥大真的好愛小Q喔'
 
-    if msg == '啾' or '啾啾' or '啾啾啾' :
+    elif msg == '啾' or '啾啾' or '啾啾啾' :
         r = '啾啾啾啾啾'
                
-    if '愛' in msg:
+    elif '愛' in msg:
         r = '最愛小Q了'
 
-    if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
+    elif '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
         s = StickerSendMessage(
             package_id='11537',
             sticker_id='52002738'
