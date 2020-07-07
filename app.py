@@ -49,7 +49,7 @@ def handle_message(event):
             event.reply_token,
             s)
 
-    elif '啾啾啾啾' in msg:
+    if '啾啾啾啾' in msg:
         r = '帥大真的好愛小Q喔'
 
     elif msg == '啾' or '啾啾' or '啾啾啾' :
