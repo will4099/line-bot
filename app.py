@@ -46,8 +46,8 @@ def handle_message(event):
         )
 
         line_bot_api.reply_message(
-        event.reply_token,
-        s)
+            event.reply_token,
+            s)
 
     if '啾啾啾啾' in msg:
         r = '帥大真的好愛小Q喔'
@@ -57,18 +57,9 @@ def handle_message(event):
         )
 
         line_bot_api.reply_message(
-        event.reply_token,
-        r and s)
+            event.reply_token,
+            r and s)
 
-    if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
-        s = StickerSendMessage(
-            package_id='11537',
-            sticker_id='52002738'
-        )
-
-        line_bot_api.reply_message(
-        event.reply_token,
-        s)
 
     if msg == '啾' or '啾啾' or '啾啾啾' :
         r = '啾啾啾啾啾'
@@ -77,8 +68,8 @@ def handle_message(event):
             sticker_id='52002737'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        r and s)
+            event.reply_token,
+            r and s)
 
     if '愛' in msg:
         r = '最愛小Q了'
@@ -87,13 +78,22 @@ def handle_message(event):
             sticker_id='51626502'
         )
         line_bot_api.reply_message(
-        event.reply_token,
-        r and s)
+            event.reply_token,
+            r and s)
 
+    if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
+        s = StickerSendMessage(
+            package_id='11537',
+            sticker_id='52002738'
+        )
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            s)
     line_bot_api.reply_message(
-    event.reply_token,
-    TextSendMessage(text=r))
-    
+        event.reply_token,
+        TextSendMessage(text=r))
+
 
 if __name__ == "__main__":
     app.run()
