@@ -51,8 +51,8 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
-    
-    if '帥' in msg:
+
+    elif '帥' in msg:
         line_bot_api.reply_message(
             event.reply_token,
             StickerSendMessage(
