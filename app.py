@@ -70,7 +70,8 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=r))
     line_bot_api.reply_message(
-        event.reply_token,sticker_message)
+        event.reply_token,
+        sticker_message)
 
     if '帥' in msg:
         sticker_message = StickerSendMessage(
