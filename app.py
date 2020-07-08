@@ -47,7 +47,7 @@ def handle_message(event):
         r = '啾啾啾啾啾'
     elif '想你' in msg:
         r = '帥大也是，好想好想小Q喔'
-    elif msg == '小Q可愛嗎':
+    elif msg == '小Q很可愛對吧':
         r = '帥大的小Q最可愛了'
 
     line_bot_api.reply_message(
@@ -90,8 +90,6 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         sticker_message)
-
-
 
            
 if __name__ == "__main__":
