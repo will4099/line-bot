@@ -41,33 +41,41 @@ def handle_message(event):
     r = '黎黎不懂'
     if '愛' in msg:
         r = '最愛小Q了'
-
-    if '啾啾啾啾' in msg:
+    elif '啾啾啾啾' in msg:
+        line_bot_api.reply_message(
+            event.reply_token,
+            StickerSendMessage(
+                package_id='11538',
+                sticker_id='51626495'
+            ))
         r = '帥大真的好愛小Q喔'
-
-    if msg == '啾' or '啾啾' or '啾啾啾' :
+    elif msg == '啾' or '啾啾' or '啾啾啾' :
         r = '啾啾啾啾啾'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
 
     if '帥' in msg :
-        s = StickerSendMessage(
-            package_id='1',
-            sticker_id='5'
-        )
-
-    if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
-        s = StickerSendMessage(
-            package_id='11537',
-            sticker_id='52002738'
-        )
-
-    line_bot_api.reply_message(
-        event.reply_token,
-        s)
-
-    
+        line_bot_api.reply_message(
+            event.reply_token,
+            StickerSendMessage(
+                package_id='1',
+                sticker_id='5'
+            ))
+    elif msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
+        line_bot_api.reply_message(
+            event.reply_token,
+            StickerSendMessage(
+                package_id='11537',
+                sticker_id='52002738'
+            ))
+    elif '抱抱' in msg:
+        line_bot_api.reply_message(
+            event.reply_token,
+            StickerSendMessage(
+                package_id='11539',
+                sticker_id='52114111'
+            ))
 
 
 if __name__ == "__main__":
