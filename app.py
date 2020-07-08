@@ -53,6 +53,7 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
+    return
 
     if '加油' in msg:
         r1 = '啾啾啾，小Q加油'
@@ -65,7 +66,7 @@ def handle_message(event):
             TextSendMessage(text=r1))
         line_bot_api.reply_message(
             event.reply_token,s1)
-    if '臭' in msg:
+    elif '臭' in msg:
         r2 = '你臭Q'
         s2 = StickerSendMessage(
             package_id='2',
@@ -77,17 +78,17 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,s2)
 
-    if '帥' in msg:
+    elif '帥' in msg:
         sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='5'
         )
-    if msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
+    elif msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
         sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002738'
         )
-    if '抱抱' in msg:
+    elif '抱抱' in msg:
         sticker_message = StickerSendMessage(
             package_id='11539',
             sticker_id='52114111'
