@@ -39,6 +39,15 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     r = '黎黎不懂'
+    if '愛' in msg:
+        r = '最愛小Q了'
+
+    if '啾啾啾啾' in msg:
+        r = '帥大真的好愛小Q喔'
+
+    if msg == '啾' or '啾啾' or '啾啾啾' :
+        r = '啾啾啾啾啾'
+
     if '帥' in msg :
         s = StickerSendMessage(
             package_id='1',
@@ -48,17 +57,8 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             s)
-
-    if '啾啾啾啾' in msg:
-        r = '帥大真的好愛小Q喔'
-
-    elif msg == '啾' or '啾啾' or '啾啾啾' :
-        r = '啾啾啾啾啾'
-               
-    elif '愛' in msg:
-        r = '最愛小Q了'
-
-    elif '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
+        
+     if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
         s = StickerSendMessage(
             package_id='11537',
             sticker_id='52002738'
@@ -71,6 +71,7 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
+
 
 
 if __name__ == "__main__":
