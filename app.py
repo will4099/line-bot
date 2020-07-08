@@ -47,6 +47,7 @@ def handle_message(event):
         r = '啾啾啾啾啾'
     elif '想你' in msg:
         r = '帥大也是，好想好想小Q喔'
+        
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
@@ -66,6 +67,7 @@ def handle_message(event):
             package_id='11539',
             sticker_id='52114111'
         )
+
     line_bot_api.reply_message(
         event.reply_token,
         sticker_message)
