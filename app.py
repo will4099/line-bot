@@ -59,6 +59,7 @@ def handle_message(event):
                 package_id='1',
                 sticker_id='5'
             ))
+
     if msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
         line_bot_api.reply_message(
             event.reply_token,
@@ -66,6 +67,7 @@ def handle_message(event):
                 package_id='11537',
                 sticker_id='52002738'
             ))
+        
     if '抱抱' in msg:
         line_bot_api.reply_message(
             event.reply_token,
