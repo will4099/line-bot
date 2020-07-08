@@ -39,7 +39,7 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     r = '黎黎不懂'
-    if '愛' in msg:
+    if '愛你' in msg:
         r = '最愛小Q了'
     elif '啾啾啾啾' in msg:
         r = '帥大真的好愛小Q喔'
@@ -47,20 +47,47 @@ def handle_message(event):
         r = '啾啾啾啾啾'
     elif '想你' in msg:
         r = '帥大也是，好想好想小Q喔'
+    elif '可愛' in msg:
+        r = '帥大的小Q最可愛了'
+
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
+
+    if '加油' in msg:
+        r1 = '啾啾啾，小Q加油'
+        s1 = StickerSendMessage(
+            package_id='1',
+            sticker_id='114'
+        ) 
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=r1))
+        line_bot_api.reply_message(
+            event.reply_token,s1)
+    if '臭' in msg:
+        r2 = '你臭Q'
+        s2 = StickerSendMessage(
+            package_id='2',
+            sticker_id='23'
+        )
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=r2))
+        line_bot_api.reply_message(
+            event.reply_token,s2)
+
     if '帥' in msg:
         sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='5'
         )
-    elif msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
+    if msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
         sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002738'
         )
-    elif '抱抱' in msg:
+    if '抱抱' in msg:
         sticker_message = StickerSendMessage(
             package_id='11539',
             sticker_id='52114111'
