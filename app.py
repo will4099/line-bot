@@ -39,7 +39,7 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     r = '黎黎不懂'
-    if '愛你' in msg:
+    if '愛' in msg:
         r = '最愛小Q了'
     elif '啾啾啾啾' in msg:
         r = '帥大真的好愛小Q喔'
@@ -53,7 +53,7 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
-    return
+        return
 
     if '加油' in msg:
         r1 = '啾啾啾，小Q加油'
