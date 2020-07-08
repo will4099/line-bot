@@ -47,7 +47,6 @@ def handle_message(event):
 
     if msg == '啾' or '啾啾' or '啾啾啾' :
         r = '啾啾啾啾啾'
-
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
