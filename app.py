@@ -51,11 +51,15 @@ def handle_message(event):
         r = '帥大真的好愛小Q喔'
     elif msg == '啾' or '啾啾' or '啾啾啾' :
         r = '啾啾啾啾啾'
+        return
+
+    if '想你' in msg:
+        r = '帥大也是，好想好想小Q喔'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
 
-    if '帥' in msg :
+    elif '帥' in msg :
         line_bot_api.reply_message(
             event.reply_token,
             StickerSendMessage(
@@ -69,7 +73,9 @@ def handle_message(event):
                 package_id='11537',
                 sticker_id='52002738'
             ))
-    elif '抱抱' in msg:
+        return
+
+    if '抱抱' in msg:
         line_bot_api.reply_message(
             event.reply_token,
             StickerSendMessage(
