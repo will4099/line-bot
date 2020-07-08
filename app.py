@@ -57,8 +57,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             s)
-        
-     if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
+    if '嗨' or '哈囉' or '你好' or 'hi' or 'hello' in msg:
         s = StickerSendMessage(
             package_id='11537',
             sticker_id='52002738'
@@ -71,7 +70,6 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
-
 
 
 if __name__ == "__main__":
