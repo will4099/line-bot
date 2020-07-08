@@ -60,7 +60,7 @@ def handle_message(event):
             package_id='1',
             sticker_id='114'
         ) 
-    if '臭' in msg:
+    elif '臭' in msg:
         r = '你臭Q'
         sticker_message = StickerSendMessage(
             package_id='2',
@@ -78,12 +78,12 @@ def handle_message(event):
             package_id='1',
             sticker_id='5'
         )
-    if msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
+    elif msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
         sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002738'
         )
-    if '抱抱' in msg:
+    elif '抱抱' in msg:
         sticker_message = StickerSendMessage(
             package_id='11539',
             sticker_id='52114111'
