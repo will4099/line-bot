@@ -53,29 +53,26 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
+    return
 
     if '加油' in msg:
-        r1 = '啾啾啾，小Q加油'
-        s1 = StickerSendMessage(
+        r = '啾啾啾，小Q加油'
+        sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='114'
         ) 
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=r1))
-        line_bot_api.reply_message(
-            event.reply_token,s1)
     elif '臭' in msg:
-        r2 = '你臭Q'
-        s2 = StickerSendMessage(
+        r = '你臭Q'
+        sticker_message = StickerSendMessage(
             package_id='2',
             sticker_id='23'
         )
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=r2))
-        line_bot_api.reply_message(
-            event.reply_token,s2)
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=r))
+    line_bot_api.reply_message(
+        event.reply_token,sticker_message)
+    return
 
     if '帥' in msg:
         sticker_message = StickerSendMessage(
