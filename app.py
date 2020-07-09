@@ -55,31 +55,26 @@ def handle_message(event):
         r = '早安小Q'
     elif '加油' in msg:
         r = '啾啾啾，小Q加油'
-        sticker_message = StickerSendMessage(
-            package_id='1',
-            sticker_id='114'
-        ) 
     elif '臭' in msg:
         r = '你臭Q'
-        sticker_message = StickerSendMessage(
-            package_id='2',
-            sticker_id='23'
-        )
     elif '帥' in msg:
         sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='5'
         )
+
     elif msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
         sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002738'
         )
+
     elif '抱抱' in msg:
         sticker_message = StickerSendMessage(
             package_id='11539',
             sticker_id='52114111'
         )
+        
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))  
