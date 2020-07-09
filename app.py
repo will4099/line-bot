@@ -53,7 +53,7 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
-
+    
     if '加油' in msg:
         r = '啾啾啾，小Q加油'
         sticker_message = StickerSendMessage(
