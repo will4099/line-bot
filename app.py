@@ -49,12 +49,11 @@ def handle_message(event):
         r = '帥大也是，好想好想小Q喔'
     elif msg == '小Q很可愛對吧':
         r = '帥大的小Q最可愛了'
-
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=r))
-    
-    if '加油' in msg:
+    elif '晚安' in msg:
+        r = '晚安我的寶貝公主Q'
+    elif '早安' in msg:
+        r = '早安小Q'
+    elif '加油' in msg:
         r = '啾啾啾，小Q加油'
         sticker_message = StickerSendMessage(
             package_id='1',
@@ -66,14 +65,7 @@ def handle_message(event):
             package_id='2',
             sticker_id='23'
         )
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=r))
-    line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
-
-    if '帥' in msg:
+    elif '帥' in msg:
         sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='5'
@@ -88,6 +80,9 @@ def handle_message(event):
             package_id='11539',
             sticker_id='52114111'
         )
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=r))  
     line_bot_api.reply_message(
         event.reply_token,
         sticker_message)
