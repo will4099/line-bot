@@ -74,13 +74,13 @@ def handle_message(event):
             package_id='11539',
             sticker_id='52114111'
         )
-        
+
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))  
     line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+    event.reply_token,
+    sticker_message)
 
            
 if __name__ == "__main__":
