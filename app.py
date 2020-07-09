@@ -66,20 +66,22 @@ def handle_message(event):
         sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002738'
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
         )
     elif '抱抱' in msg:
         sticker_message = StickerSendMessage(
             package_id='11539',
             sticker_id='52114111'
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
         )
-
-
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))  
-    line_bot_api.reply_message(
-    event.reply_token,
-    sticker_message)
+
 
            
 if __name__ == "__main__":
