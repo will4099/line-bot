@@ -39,16 +39,16 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     r = '黎黎不懂'
-    if '愛' in msg:
+    if '可愛' in msg:
+        r = '帥大的小Q最可愛了'
+    elif '愛' in msg:
         r = '最愛小Q了'
     elif '啾啾啾啾' in msg:
-        r = '帥大真的好愛小Q喔'
-    elif msg in ['啾', '啾啾','啾啾啾']:
+        r = '小Q啾啾啾啾啾啾啾啾'
+    elif '啾' in msg:
         r = '啾啾啾啾啾'
     elif '想你' in msg:
         r = '帥大也是，好想好想小Q喔'
-    elif msg == '小Q很可愛對吧':
-        r = '帥大的小Q最可愛了'
     elif '晚安' in msg:
         r = '晚安我的寶貝公主Q'
     elif '早安' in msg:
@@ -57,6 +57,13 @@ def handle_message(event):
         r = '啾啾啾，小Q加油'
     elif '臭' in msg:
         r = '你臭Q'
+    elif '...' in msg:
+        r = '.........'
+    elif '帥大棒' in msg:
+        r = '啾啾啾最愛你了寶貝小Q'
+    elif '小Q棒' in msg:
+        r = '帥大的小Q一直都很棒'
+
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r)) 
@@ -66,6 +73,9 @@ def handle_message(event):
             package_id='11537',
             sticker_id='52002738'
         )
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
     elif '帥' in msg:
         sticker_message = StickerSendMessage(
             package_id='1',
@@ -82,6 +92,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             sticker_message)
+
 
  
 
