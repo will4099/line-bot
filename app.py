@@ -69,6 +69,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             sticker_message)
+
     elif msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
         sticker_message = StickerSendMessage(
             package_id='11537',
@@ -77,6 +78,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             sticker_message)
+        
     elif '抱抱' in msg:
         sticker_message = StickerSendMessage(
             package_id='11539',
