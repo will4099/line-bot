@@ -70,7 +70,7 @@ def handle_message(event):
     elif '咘咘' in msg:
         r = '好愛你喔小Q'
     elif '陪' in msg:
-        r = '帥大有都在陪小Q阿'
+        r = '帥大都有在陪小Q阿'
     elif '無聊' in msg:
         r = '啾啾多想點帥大'
     line_bot_api.reply_message(
@@ -82,13 +82,11 @@ def handle_message(event):
             package_id='11537',
             sticker_id='52002738'
         )
-
     elif '帥' in msg:
         sticker_message = StickerSendMessage(
             package_id='1',
             sticker_id='5'
         )
-
     elif '抱抱' in msg:
         sticker_message = StickerSendMessage(
             package_id='11539',
@@ -97,6 +95,7 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         sticker_message)
+    return
 
 
 if __name__ == "__main__":
