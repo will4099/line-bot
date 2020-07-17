@@ -41,6 +41,8 @@ def handle_message(event):
     r = '黎黎不懂'
     if '可愛' in msg:
         r = '帥大的小Q最可愛了'
+    elif '黎黎不懂' in msg:
+        r = '??????'
     elif '色色' in msg:
         r = '帥大才一點都不色'
     elif '愛' in msg:
@@ -81,15 +83,18 @@ def handle_message(event):
     if msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
         sticker_message = StickerSendMessage(
             package_id = '11537',
-            sticker_id = '52002738')
+            sticker_id = '52002738'
+        )
     elif '帥' in msg:
         sticker_message = StickerSendMessage(
             package_id = '1',
-            sticker_id = '5')
+            sticker_id = '5'
+        )
     elif '抱抱' in msg:
         sticker_message = StickerSendMessage(
             package_id = '11539',
-            sticker_id = '52114111')
+            sticker_id = '52114111'
+        )
     line_bot_api.reply_message(
         event.reply.token,
         TextSendMessage(text=sticker_message))
