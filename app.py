@@ -1,3 +1,4 @@
+import time
 from flask import Flask, request, abort
 
 from linebot import (
@@ -12,8 +13,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('dvi4+TbHBY3peCO29ldcYeJjRoddEKKrkiX8uWJTSsXITf/e+sTMM/g5MkQ8WNITA0/XgT9j6Kgwx0/sKMEN9azOqD/FBsfRuPYAHrTkeYJtf99O23x7bJtoMiy99y8Ac/Mhl3QqJnbEanuMNI/RLwdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('4cf41939cf6e66179069b061b37c4ec6')
+line_bot_api = LineBotApi('api')
+handler = WebhookHandler('hook')
 
 
 @app.route("/callback", methods=['POST'])
@@ -37,10 +38,14 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    text_message = TextSendMessage(text='啾啾啾啾帥大愛妳小Q')
+    text_message.time.sleep(21600)
     msg = event.message.text
     r = '黎黎不懂'
     if '可愛' in msg:
         r = '帥大的小Q最可愛了'
+    elif '笨笨' in msg:
+        r = '小Q厭厭'
     elif '黎黎不懂' in msg:
         r = '??????'
     elif '色色' in msg:
@@ -79,7 +84,8 @@ def handle_message(event):
         r = '啾啾多想點帥大'
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r)) 
+        TextSendMessage(text=r))
+    
     if msg in ['嗨', '哈囉', '你好', 'hi', 'hello']:
         sticker_message = StickerSendMessage(
             package_id = '11537',
